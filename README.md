@@ -10,9 +10,10 @@ Built for use in the Kimai project it can be used for any PHP FPM server.
       -ti \
       --rm \
       -name nginx-fpm-reverse-proxy \
+      -e FPM_NGINX_HOST=kimai \
       -v ${pwd}:/opt/kimai \
       -p 8001:80 \
-    tobybatch/nginx-fpm-reverse-proxy
+    lcxat/nginx-fpm-reverse-proxy
 
 ## Building
 
@@ -22,5 +23,5 @@ There is no build time customisation:
 
 ## Runtime settings
 
-This instance of nginx listens on port `80` and forwards php requests to `kimai:9000`. The server name is `nginx`
+This instance of nginx listens on port `80` and forwards php requests to the env var FPM_NGINX_HOST port `9000`. The server name is `nginx`
 
