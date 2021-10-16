@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:1.21.3-alpine
 LABEL description="Nginx alpine image built to reverse proxy requests to a PHP FPM server"
 
 ADD start.sh /usr/local/bin/
